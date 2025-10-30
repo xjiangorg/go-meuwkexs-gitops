@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-meuwkexs-gitops
+  description: This is GitOps manifest for go-meuwkexs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-meuwkexs
+    backstage.io/kubernetes-id: go-meuwkexs 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: xjiangorg/go-meuwkexs-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-meuwkexs
